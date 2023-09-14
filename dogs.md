@@ -1,4 +1,4 @@
-# list of dogs 
+# List of Dogs
 1. German Shepherds
 2. Bulldogs
 3. Samoyeds
@@ -6,4 +6,3 @@
 5. Pugs
 6. Poodles
 7. Chihuahua
-8. Alaskan Malamute

@@ -13,7 +13,9 @@
   "dependencies": {
     "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.20.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
@@ -26,11 +28,11 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-        "eslint",
-        "prettier -w"
+      "eslint",
+      "prettier -w"
     ],
     "src/**/*.{json,css,scss,md}": [
-        "prettier -w"
+      "prettier -w"
     ]
-}
+  }
 }

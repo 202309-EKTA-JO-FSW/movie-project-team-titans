@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Movies from "./movies";
-//import ActorsPage from '../../pages/Actors';
+import ReactDOM from 'react-dom';
+import ActorsLink from "./actors";
 import Search from "./search";
 import Genres from "./genres";
 
@@ -45,8 +46,7 @@ function Navbar() {
             </div>
           )}
         </div>
-        <h1>Actors</h1>
-            {/*  <ActorsPage /> */}
+          <ActorsLink />
         </div>
       </nav>
     </div>

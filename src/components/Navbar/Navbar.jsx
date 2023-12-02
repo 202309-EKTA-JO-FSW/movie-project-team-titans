@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Movies from "./movies";
-import Actors from "./actors";
+//import ActorsPage from '../../pages/Actors';
 import Search from "./search";
 import Genres from "./genres";
 
@@ -45,8 +45,8 @@ function Navbar() {
             </div>
           )}
         </div>
-
-        <Actors />
+        <h1>Actors</h1>
+            {/*  <ActorsPage /> */}
         </div>
       </nav>
     </div>

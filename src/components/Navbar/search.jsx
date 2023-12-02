@@ -96,7 +96,7 @@ function Search() {
 </form>
 
       {combinedResults.length > 0 && (
-        <div ref={listRef} className="absolute mt-1 bg-gray-900 rounded-md shadow-md w-96">
+        <div ref={listRef} className="absolute mt-1 bg-gray-900 rounded-md shadow-md w-96 left-5">
           {combinedResults.slice(0, 5).map((result) => (
   <div key={result.id} className="p-2 text-white flex items-center space-x-4">
     {result.type === 'movie' ? (

@@ -1,8 +1,8 @@
-import React from "react";
+// import React from "react";
+// import ActorsPage from "@/pages/Actors/index";
 
-function Actors() {
-    
-  return <p>Actors</p>;
-}
+// function ActorsLink() {
+//   return <p>Actors <ActorsPage /></p>;
+// }
 
-export default Actors;
+// export default ActorsLink;

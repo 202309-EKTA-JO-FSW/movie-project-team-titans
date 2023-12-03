@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="logo mb-0">
           <img src="/logo.png" alt="logo"></img>
         </div>
-        <div className=" lg:flex lg:items-start lg:gap-8 ">
+        <div className="lg:flex lg:items-start lg:gap-8 ">
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <div className="col-span-2">
               <p className="text-white mt-4 text-gray-500">

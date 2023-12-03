@@ -3,13 +3,12 @@ import Movies from "./movies"
 import ActorsLink from "./actors"
 import Search from "./search"
 import Genres from "./genres"
+import Link from "next/link"
 
 function Navbar() {
   const [moviesDropdownVisible, setMoviesDropdownVisible] = useState(false)
   const [genresDropdownVisible, setGenresDropdownVisible] = useState(false)
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0,
-  )
+  const [windowWidth, setWindowWidth] = useState(0)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -32,7 +31,11 @@ function Navbar() {
       {windowWidth <= 480 ? (
         <div>
           <div className="grid grid-cols-2  grid-cols-[max-content_1fr] justify-center items-center pt-4 pl-4 pr-4 text-white">
-            <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
+            <Link href={`/Home`}>
+              {" "}
+              <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
+            </Link>
+
             <div className="mx-auto">
               <Search />
             </div>
@@ -83,11 +86,10 @@ function Navbar() {
         //
         <div className="flex items-center justify-center justify-around p-4 text-white">
           <div>
-            <img
-              src="/logo.png"
-              className="logo lg:w-25 lg:h-15 md:w-22 md:h-10 sm:w-18 sm:h-8 xs:w-17 xs:h-8"
-              alt="logo"
-            />
+            <Link href={`/Home`}>
+              {" "}
+              <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
+            </Link>
           </div>
           <Search />
           <div className="group inline-block relative">

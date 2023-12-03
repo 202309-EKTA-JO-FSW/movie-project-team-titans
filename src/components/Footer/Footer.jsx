@@ -1,4 +1,6 @@
 import React from "react"
+import Link from "next/link"
+
 const Footer = () => {
   const teamMembers = [
     {
@@ -27,7 +29,9 @@ const Footer = () => {
     <footer className="rounded-t-3xl mt-auto bg-gray-800 ">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="logo mb-0">
-          <img src="/logo.png" alt="logo"></img>
+          <Link href={`/Home`}>
+            <img src="/logo.png" alt="logo"></img>
+          </Link>
         </div>
         <div className="lg:flex lg:items-start lg:gap-8 ">
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">

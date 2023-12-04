@@ -27,16 +27,16 @@ function Navbar() {
   }, [])
 
   return (
-    <div className="bg-gray-800">
+    <div className="bg-[#142E2E]">
       {windowWidth <= 480 ? (
         <div>
-          <div className="grid   grid-cols-[max-content_1fr] justify-center items-center pt-4 pl-4 pr-4 text-white">
+          <div className="grid grid-cols-[max-content_1fr] justify-center items-center pt-4 pl-4 pr-4 text-white">
             <Link href={`/Home`}>
               {" "}
               <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
             </Link>
 
-            <div className="mx-auto  z-50">
+            <div className="mx-auto z-50">
               <Search />
             </div>
           </div>

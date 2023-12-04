@@ -16,7 +16,7 @@ const Footer = () => {
     {
       name: "Mahmoud Rumaneh",
       github: "https://github.com/MahmoudRumaneh",
-      linkedin: "https://www.linkedin.com/in/MahmoudRumaneh",
+      linkedin: "https://www.linkedin.com/in/mahmoud-rumaneh-b40537209/",
     },
     {
       name: "Ghassan Ajouri",
@@ -26,7 +26,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="rounded-t-3xl mt-auto bg-gray-800 ">
+    <footer className="rounded-t-3xl mt-auto bg-[#142E2E] ">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="logo mb-0">
           <Link href={`/Home`}>
@@ -89,6 +89,7 @@ const Footer = () => {
                       >
                         <a
                           href="#"
+                          target="_blank"
                           className="container w-40 text-white transition hover:opacity-75"
                         >
                           {member.name}
@@ -97,6 +98,7 @@ const Footer = () => {
                         <li className="">
                           <a
                             href={member.github}
+                            target="_blank"
                             className="text-white transition hover:opacity-75"
                           >
                             <span className="sr-only">GitHub</span>
@@ -119,6 +121,7 @@ const Footer = () => {
                         <li>
                           <a
                             href={member.linkedin}
+                            target="_blank"
                             className="text-white transition hover:opacity-75"
                           >
                             <span className="sr-only">Linkedin</span>

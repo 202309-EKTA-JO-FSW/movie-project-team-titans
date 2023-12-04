@@ -84,7 +84,7 @@ function Search() {
   }, [searchText])
 
   return (
-    <div className="relative ">
+    <div className="relative z-50">
       <form>
         <div className="relative flex items-center bg-gray-800">
           <FaSearch className="sm:text-xs absolute left-3 text-gray-500" />

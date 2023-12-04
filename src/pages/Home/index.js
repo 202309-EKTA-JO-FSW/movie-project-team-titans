@@ -4,6 +4,10 @@ import React, { useState, useEffect } from 'react';
 import Genres from '@/components/Navbar/genres';
 import { getGenreNames } from '@/components/Navbar/helper';
 
+import { StarIcon } from '@heroicons/react/solid'; 
+
+
+
 
 export default function HomePage() {
   const [moviesTrending, setMoviesTrending] = useState([]);
@@ -60,60 +64,110 @@ export default function HomePage() {
 
     fetchMoviesGenres();  
   }, []);
+    
   const getGenreNames = (genreIds) => {
     if (!moviesGenres || moviesGenres.length === 0) {
       return ['Unknown Genre'];
     }
-    return genreIds.map((genreId) => {
-  const genre = moviesGenres.find((g) => g.id === genreId);
-  return genre ? genre.name : 'Unknown Genre';
+    
+        return genreIds.map((genreId) => {
+      const genre = moviesGenres.find((g) => g.id === genreId);
+      return genre ? genre.name : 'Unknown Genre';
     });
-};
+  };
   
+  // 
+  // 
+  // 
 
+  const images = [
+    "https://images4.alphacoders.com/134/1342682.jpeg",
+    "https://images2.alphacoders.com/132/1320087.jpeg",
+    "https://images3.alphacoders.com/133/1334629.jpg",
+    "https://images4.alphacoders.com/132/1323605.jpeg",
+  ]
+
+const [currentIndex, setCurrentIndex] = useState(0);
+
+useEffect(() => {
+const interval = setInterval(() => {
+  setCurrentIndex((prevIndex) =>
+    prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  );
+}, 5000);
+
+return () => clearInterval(interval);
+}, []);
+
+  // 
+  // 
+  // 
   return (
     <main>
       <div>
-
-        <Navbar />
-       
-        <br /> <br />
-        <div className='lg:px-50 md:px-40 sm:px-30 xs:px-5 relative'>
-          <div className="grid justify-items-center items-center lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-2 sm:grid-cols-2 sm:gap-1 xs:grid-cols-1">
+      <Navbar />
+      
+        
+      <div className="MovieSlider relative object-scale-down w-full h-96">
+      <div className="">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={index}
+            className={`absolute w-full h-full ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+            } transition-opacity duration-500`}
+          />
+        ))}
+         </div>
+          {/********************************/}
+          
+       </div>
+        <br /> <br /><br />
+        <div className='lg:px-30 md:px-40 sm:px-30 xs:px-5 relative'>
+          <div className="grid justify-items-center items-center lg:grid-cols-4 lg:gap-3 md:grid-cols-3 md:gap-2 sm:grid-cols-2 sm:gap-2 xs:grid-cols-1 xs:gap-2">
             {moviesTrending.map((movie) => (
               <li
                 key={movie.id}
-                className="list-none bg-gray-300 rounded-md p-4 relative"
+                className="list-none relative"
                 onMouseEnter={() => setHoveredMovie(movie)}
                 onMouseLeave={() => setHoveredMovie(null)}
               >
-                <div className="rounded-md p-4">
+              <div className="relative rounded-md p-4">
+              <div className="absolute top-0 left-0 bg-yellow-500 p-2 rounded-tl-3xl  rounded-br-md flex items-center">
+                <StarIcon className="w-6 h-6 text-white" />
+                <span className="text-white ml-2 font-bold">{movie.vote_average.toFixed(1)}</span>
+              </div>
+                <div>
                   <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     alt={movie.title}
-                    className="w-48 h-full object-cover rounded-3xl p-0"
-                  />
+                    className="w-full h-full object-cover rounded-3xl p-0" />
+                  
                 </div>
-                <p className="mt-2 text-center text-white font-bold bg-gray-800 p-2 rounded-md">{movie.title}</p>
+              </div>
+            <div className="relative">
+      </div>
 
-                {hoveredMovie && hoveredMovie.id === movie.id && (
-                  <div className="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
-                    <div className="text-white text-center">
-                      <p>Language: {hoveredMovie.original_language === 'en' ? 'English' : ''}</p>
-                      <p>Rating: {hoveredMovie.vote_average.toFixed(1)}</p>
-                      <p className='pt-3'>{getGenreNames(hoveredMovie.genre_ids).map((genre, index) => (
-                        <span key={index} className="border-white rounded-md bg-blue-800 text-white p-1 mr-1">
-                          {genre}
-                        </span>
-                      ))}</p>
-                    </div>
-                  </div>
-                )}
-              </li>
+                
+    {hoveredMovie && hoveredMovie.id === movie.id && (
+      <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gray-800 bg-opacity-75 flex items-center justify-center">
+      <div className="text-white text-center">
+      <p>Language: {hoveredMovie.original_language === 'en' ? 'English' : ''}</p>                
+      <p className='p`t-3'>{getGenreNames(hoveredMovie.genre_ids).map((genre, index) => (
+        <span key={index} className="border-white rounded-md bg-blue-800 text-white p-1 mr-1">
+          {genre}
+        </span>
+        ))}
+      </p>
+      </div>
+      </div>
+      )}
+            </li>
             ))}
           </div>
         </div>
-
         <Footer />
       </div>
     </main>

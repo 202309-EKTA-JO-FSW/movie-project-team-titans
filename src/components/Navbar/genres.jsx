@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react"
+
+import React, { useState, useEffect } from "react";
 
 export default function Genres() {
-  const [moviesGenres, setMoviesGenres] = useState([])
+  const [moviesGenres, setMoviesGenres] = useState([]);
 
   useEffect(() => {
     const fetchMoviesGenres = async () => {
@@ -12,35 +13,43 @@ export default function Genres() {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjOTBiNjEzZDU2ZjM3YzM5ODBmMDE3MjkxMTE2Y2Q4NyIsInN1YiI6IjY1NjUyYmE2YTM1YzhlMDBmZTRhMmU3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.M_GBCLDOufr5pWrAD4IBAu1o6XUAi_3oCo6VYxxe4HI",
         },
-      }
+      };
       try {
         const response = await fetch(
           "https://api.themoviedb.org/3/genre/movie/list",
-          options,
-        )
-        const data = await response.json()
+          options
+        );
+        const data = await response.json();
 
         //console.log("API Response:", data);
 
-        setMoviesGenres(data.genres || [])
+        setMoviesGenres(data.genres || []);
       } catch (error) {
-        console.error("Error fetching genres:", error)
+        console.error("Error fetching genres:", error);
       }
-    }
+    };
 
-    fetchMoviesGenres()
-  }, [])
-  const columnCount = 2 // Set the number of columns
-  const optionsPerColumn = Math.ceil(moviesGenres.length / columnCount)
+    fetchMoviesGenres();
+  }, []);
+
+  const getGenreNames = (genreIds) => {
+    return genreIds.map((genreId) => {
+      const genre = moviesGenres.find((g) => g.id === genreId);
+      return genre ? genre.name : "Unknown Genre";
+    });
+  };
+
+  const columnCount = 2; // Set the number of columns
+  const optionsPerColumn = Math.ceil(moviesGenres.length / columnCount);
 
   return (
     <div className="flex">
       {Array.from({ length: columnCount }).map((_, columnIndex) => (
-        <div key={columnIndex} className="flex-1 ">
+        <div key={columnIndex} className="flex-1">
           {moviesGenres
             .slice(
               columnIndex * optionsPerColumn,
-              (columnIndex + 1) * optionsPerColumn,
+              (columnIndex + 1) * optionsPerColumn
             )
             .map((genre) => (
               <option
@@ -54,5 +63,5 @@ export default function Genres() {
         </div>
       ))}
     </div>
-  )
+  );
 }

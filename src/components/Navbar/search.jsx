@@ -104,7 +104,7 @@ function Search() {
       {combinedResults.length > 0 && (
         <div
           ref={listRef}
-          className="absolute border-solid border-2 border-white rounded-3xl mt-1 bg-gray-900 shadow-md w-96 left-5"
+          className="absolute border-solid border-2 border-white rounded-3xl mt-1 bg-gray-900 shadow-md w-96"
         >
           {combinedResults.slice(0, 5).map((result) => (
             <div

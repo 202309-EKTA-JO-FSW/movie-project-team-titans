@@ -84,7 +84,7 @@ function Search() {
   }, [searchText])
 
   return (
-    <div className=" relative">
+    <div className="relative ">
       <form>
         <div className="relative flex items-center bg-gray-800">
           <FaSearch className="sm:text-xs absolute left-3 text-gray-500" />
@@ -104,7 +104,7 @@ function Search() {
       {combinedResults.length > 0 && (
         <div
           ref={listRef}
-          className="absolute rounded-3xl mt-1 bg-gray-900 shadow-md w-96 left-5"
+          className="absolute border-solid border-2 border-white rounded-3xl mt-1 bg-gray-900 shadow-md w-96 left-5"
         >
           {combinedResults.slice(0, 5).map((result) => (
             <div

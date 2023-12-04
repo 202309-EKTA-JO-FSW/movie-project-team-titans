@@ -30,7 +30,7 @@ function Navbar() {
     <div className="bg-gray-800">
       {windowWidth <= 480 ? (
         <div>
-          <div className="grid grid-cols-2  grid-cols-[max-content_1fr] justify-center items-center pt-4 pl-4 pr-4 text-white">
+          <div className="grid   grid-cols-[max-content_1fr] justify-center items-center pt-4 pl-4 pr-4 text-white">
             <Link href={`/Home`}>
               {" "}
               <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
@@ -43,14 +43,14 @@ function Navbar() {
           <div className="grid grid-cols-3 text-center p-3 mx-auto">
             <div className="group inline-block relative">
               <button
-                className="text-white focus:outline-none bg-transparent"
+                className="text-white focus:outline-none bg-transparent  hover:opacity-75"
                 onClick={() => setMoviesDropdownVisible(!moviesDropdownVisible)}
                 onBlur={() => setMoviesDropdownVisible(false)}
               >
                 Movies
               </button>
               {moviesDropdownVisible && (
-                <div className="absolute bg-gray-800 text-white p-2 mt-2 rounded-md">
+                <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
                   <Movies />
                 </div>
               )}
@@ -58,19 +58,21 @@ function Navbar() {
 
             <div className="group inline-block relative">
               <button
-                className="text-white focus:outline-none"
+                className=" hover:opacity-75 text-white focus:outline-none"
                 onClick={() => setGenresDropdownVisible(!genresDropdownVisible)}
                 onBlur={() => setGenresDropdownVisible(false)}
               >
                 Genres
               </button>
               {genresDropdownVisible && (
-                <div className="absolute bg-gray-800 text-white p-2 mt-2 rounded-md">
+                <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
                   <Genres />
                 </div>
               )}
             </div>
-            <ActorsLink />
+            <div className=" hover:opacity-75">
+              <ActorsLink />
+            </div>
           </div>
         </div>
       ) : (
@@ -84,10 +86,9 @@ function Navbar() {
         //
         //
         //
-        <div className="flex items-center justify-center justify-around p-4 text-white">
+        <div className="flex items-center  justify-around p-4 text-white">
           <div>
             <Link href={`/Home`}>
-              {" "}
               <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
             </Link>
           </div>
@@ -106,10 +107,9 @@ function Navbar() {
               </div>
             )}
           </div>
-
           <div className="group inline-block relative">
             <button
-              className="text-white focus:outline-none"
+              className="text-white  hover:opacity-75 focus:outline-none"
               onClick={() => setGenresDropdownVisible(!genresDropdownVisible)}
               onBlur={() => setGenresDropdownVisible(false)}
             >
@@ -121,7 +121,9 @@ function Navbar() {
               </div>
             )}
           </div>
-          <ActorsLink />
+          <div className=" hover:opacity-75">
+            <ActorsLink />
+          </div>
         </div>
       )}
     </div>

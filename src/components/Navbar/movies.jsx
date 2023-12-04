@@ -1,57 +1,49 @@
+import Link from "next/link"
 import React from "react"
-
 function Movies() {
   return (
     <div className="movies relative justify-center text-left mx-center">
-      <a href="#">
-        <option
-          className="my-1 mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
-          value="All"
-        >
-          Movies
-        </option>
-      </a>
-      <a href="#">
+       <Link to="/One-Movie?category=Top Rated">
         <option
           className="  my-2  mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600"
           value="Top Rate"
         >
           Top Rated
         </option>
-      </a>
+      </Link>
 
-      <a href="#">
+      <Link to="/One-Movie?category=Popular">
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Popular"
         >
           Popular
         </option>
-      </a>
-      <a href="#">
+      </Link>
+      <Link to="/One-Movie?category=Trending">
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
-          value="Latest"
+          value="Trending"
         >
-          Latest
+          Trending
         </option>
-      </a>
-      <a href="#">
+      </Link>
+      <Link to="/One-Movie?category=Now Playing">
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Now Playing"
         >
           Now Playing
         </option>
-      </a>
-      <a href="#">
+      </Link>
+      <Link to="/One-Movie?category=Upcoming">
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Upcoming"
         >
           Upcoming
         </option>
-      </a>
+      </Link>
     </div>
   )
 }

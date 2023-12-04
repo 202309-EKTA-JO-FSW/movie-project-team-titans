@@ -86,14 +86,14 @@ function Search() {
   return (
     <div className="relative z-50">
       <form>
-        <div className="relative flex items-center bg-gray-800">
+        <div className="relative flex items-center bg-[#142E2E]">
           <FaSearch className="sm:text-xs absolute left-3 text-gray-500" />
           <input
             ref={inputRef}
             type="text"
             name="search"
             placeholder="Find Movies or Actors..."
-            className={`xs:w-28 sm:w-32 sm:text-xs md:w-64 md:text-base lg:w-96 lg:text-lg pl-8 pr-0.8 py-1 rounded-2xl focus:outline-none border border-gray-300 bg-gray-800 text-white`}
+            className={`xs:w-28 sm:w-32 sm:text-xs md:w-64 md:text-base lg:w-96 lg:text-lg pl-8 pr-0.8 py-1 rounded-2xl focus:outline-none border border-gray-300 bg-[#142E2E] text-white`}
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             onClick={handleInputClick}
@@ -104,9 +104,10 @@ function Search() {
       {combinedResults.length > 0 && (
         <div
           ref={listRef}
-          className="absolute border-solid border-2 border-white rounded-3xl mt-1 bg-gray-900 shadow-md w-96"
+          className="xs:w-28 sm:w-32 sm:text-xs md:w-64 md:text-base lg:w-96 lg:text-lg absolute border-solid border-2 border-white rounded-3xl mt-1 bg-gray-900 shadow-md overflow-y-auto max-h-96"
+
         >
-          {combinedResults.slice(0, 5).map((result) => (
+          {combinedResults.map((result) => (
             <div
               key={result.id}
               className=" m-3 rounded-2xl p-3.5 active:bg-gray-600 hover:bg-gray-600 text-white flex items-center space-x-4 "

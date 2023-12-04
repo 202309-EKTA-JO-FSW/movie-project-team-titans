@@ -3,8 +3,8 @@ import Navbar from '@/components/Navbar/Navbar';
 import React, { useState, useEffect } from 'react';
 import Genres from '@/components/Navbar/genres';
 import { getGenreNames } from '@/components/Navbar/helper';
-
 import { StarIcon } from '@heroicons/react/solid'; 
+import Link from 'next/link';
 
 
 
@@ -108,63 +108,67 @@ return () => clearInterval(interval);
       <Navbar />
       
         
-      <div className="MovieSlider relative object-scale-down w-full h-96">
-      <div className="">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={index}
-            className={`absolute w-full h-full ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-            } transition-opacity duration-500`}
-          />
-        ))}
-         </div>
-          {/********************************/}
-          
-       </div>
-        <br /> <br /><br />
-        <div className='lg:px-30 md:px-40 sm:px-30 xs:px-5 relative'>
+      <div className='flex justify-center'>
+  <div className="MovieSlider relative object-scale-down" style={{ width: '1103px', height: '400px'}}>
+    {images.map((image, index) => (
+      <img
+        key={index}
+        src={image}
+        alt={index}
+        className={`absolute w-full h-full ${
+          index === currentIndex ? "opacity-100" : "opacity-0"
+        } transition-opacity duration-500 rounded-br-3xl rounded-bl-3xl`}
+      />
+    ))}
+  </div>
+</div>
+
+        <br />
+        <div className='mt-8 border-t border-gray-100 pt-8 ml-20 mr-20'></div>
+        <div className='ml-20 mb-10 text-2xl'><h1>Trending Movies</h1></div>
+        <div className='lg:px-30 md:px-40 sm:px-30 xs:px-5 relative mb-10'>
           <div className="grid justify-items-center items-center lg:grid-cols-4 lg:gap-3 md:grid-cols-3 md:gap-2 sm:grid-cols-2 sm:gap-2 xs:grid-cols-1 xs:gap-2">
             {moviesTrending.map((movie) => (
-              <li
+               <Link href={`/One-Movie`}><li
                 key={movie.id}
                 className="list-none relative"
                 onMouseEnter={() => setHoveredMovie(movie)}
                 onMouseLeave={() => setHoveredMovie(null)}
               >
+                
               <div className="relative rounded-md p-4">
               <div className="absolute top-0 left-0 bg-yellow-500 p-2 rounded-tl-3xl  rounded-br-md flex items-center">
                 <StarIcon className="w-6 h-6 text-white" />
                 <span className="text-white ml-2 font-bold">{movie.vote_average.toFixed(1)}</span>
               </div>
+             
                 <div>
-                  <img
+                <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     alt={movie.title}
                     className="w-full h-full object-cover rounded-3xl p-0" />
-                  
                 </div>
               </div>
             <div className="relative">
       </div>
 
                 
-    {hoveredMovie && hoveredMovie.id === movie.id && (
-      <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gray-800 bg-opacity-75 flex items-center justify-center">
-      <div className="text-white text-center">
-      <p>Language: {hoveredMovie.original_language === 'en' ? 'English' : ''}</p>                
-      <p className='p`t-3'>{getGenreNames(hoveredMovie.genre_ids).map((genre, index) => (
-        <span key={index} className="border-white rounded-md bg-blue-800 text-white p-1 mr-1">
+      {hoveredMovie && hoveredMovie.id === movie.id && (
+  <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-gray-800 bg-opacity-75 flex flex-col items-center pt-10 pr-5 pl-5">
+    <div className="text-white text-center">
+      <p className='self-start text-2xl mb-8'>{hoveredMovie.title}</p>
+      <p>Language: {hoveredMovie.original_language === 'en' ? 'English' : hoveredMovie.original_language === 'hi' ? 'Hindi' : hoveredMovie.original_language === 'ja' ? 'Japanese' : ''}</p>
+      <p className='p-3'>{getGenreNames(hoveredMovie.genre_ids).map((genre, index) => (
+        <span key={index} className="flex justify-center border-white rounded-3xl bg-blue-900 text-white pt-1 pb-1 m-2">
           {genre}
         </span>
-        ))}
+      ))}
       </p>
-      </div>
-      </div>
-      )}
-            </li>
+    </div>
+  </div>
+)}
+
+            </li></Link>
             ))}
           </div>
         </div>

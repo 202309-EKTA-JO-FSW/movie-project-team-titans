@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 
 export default function Genres() {
@@ -39,28 +38,16 @@ export default function Genres() {
     });
   };
 
-  const columnCount = 2; // Set the number of columns
-  const optionsPerColumn = Math.ceil(moviesGenres.length / columnCount);
-
   return (
-    <div className="flex">
-      {Array.from({ length: columnCount }).map((_, columnIndex) => (
-        <div key={columnIndex} className="flex-1">
-          {moviesGenres
-            .slice(
-              columnIndex * optionsPerColumn,
-              (columnIndex + 1) * optionsPerColumn
-            )
-            .map((genre) => (
-              <option
-                key={genre.id}
-                className="my-2  mx-1 rounded-2xl px-5  hover:bg-gray-600"
-                value={genre.name}
-              >
-                {genre.name}
-              </option>
-            ))}
-        </div>
+    <div className="max-h-48 overflow-y-auto">
+      {moviesGenres.map((genre) => (
+        <option
+          key={genre.id}
+          className="my-2  mx-1 rounded-2xl px-5  hover:bg-gray-600"
+          value={genre.name}
+        >
+          {genre.name}
+        </option>
       ))}
     </div>
   );

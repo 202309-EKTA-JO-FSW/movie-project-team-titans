@@ -2,7 +2,7 @@ import React from "react"
 
 function Movies() {
   return (
-    <div className="movies relative justify-center text-center mx-center">
+    <div className="movies relative justify-center text-left mx-center">
       <a href="#">
         <option
           className="my-1 mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"

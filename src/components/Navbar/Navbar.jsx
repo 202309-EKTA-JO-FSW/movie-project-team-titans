@@ -94,14 +94,14 @@ function Navbar() {
           <Search />
           <div className="group inline-block relative">
             <button
-              className="text-white focus:outline-none bg-transparent"
+              className="transition hover:opacity-75 text-white focus:outline-none bg-transparent"
               onClick={() => setMoviesDropdownVisible(!moviesDropdownVisible)}
               onBlur={() => setMoviesDropdownVisible(false)}
             >
               Movies
             </button>
             {moviesDropdownVisible && (
-              <div className="absolute bg-gray-800 text-white p-2 mt-2 rounded-md">
+              <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
                 <Movies />
               </div>
             )}
@@ -116,7 +116,7 @@ function Navbar() {
               Genres
             </button>
             {genresDropdownVisible && (
-              <div className="absolute bg-gray-800 text-white p-2 mt-2 rounded-md">
+              <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
                 <Genres />
               </div>
             )}

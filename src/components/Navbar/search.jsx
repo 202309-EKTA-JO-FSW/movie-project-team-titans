@@ -109,7 +109,7 @@ function Search() {
           {combinedResults.slice(0, 5).map((result) => (
             <div
               key={result.id}
-              className="m-3 p-2 text-white flex items-center space-x-4"
+              className=" m-3 rounded-2xl p-3.5 active:bg-gray-600 hover:bg-gray-600 text-white flex items-center space-x-4 "
             >
               {result.type === "movie" ? (
                 <div className="flex-shrink-0">

@@ -36,12 +36,13 @@ function Navbar() {
               <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
             </Link>
 
-            <div className="mx-auto">
+            <div className="mx-auto  z-50">
               <Search />
             </div>
           </div>
-          <div className="grid grid-cols-3 text-center p-3 mx-auto">
-            <div className="group inline-block relative">
+
+          <div className="grid grid-cols-3  text-center p-3 mx-auto">
+            <div className="group inline-block  relative">
               <button
                 className="text-white focus:outline-none bg-transparent  hover:opacity-75"
                 onClick={() => setMoviesDropdownVisible(!moviesDropdownVisible)}
@@ -50,7 +51,7 @@ function Navbar() {
                 Movies
               </button>
               {moviesDropdownVisible && (
-                <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
+                <div className="border-solid border-2 z-50 border-white absolute  bg-gray-800 text-white mt-6 rounded-xl">
                   <Movies />
                 </div>
               )}
@@ -65,7 +66,7 @@ function Navbar() {
                 Genres
               </button>
               {genresDropdownVisible && (
-                <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
+                <div className="border-solid border-2  z-50 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
                   <Genres />
                 </div>
               )}
@@ -92,7 +93,9 @@ function Navbar() {
               <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
             </Link>
           </div>
+
           <Search />
+
           <div className="group inline-block relative">
             <button
               className="transition hover:opacity-75 text-white focus:outline-none bg-transparent"
@@ -102,7 +105,7 @@ function Navbar() {
               Movies
             </button>
             {moviesDropdownVisible && (
-              <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
+              <div className="border-solid border-2 z-50 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
                 <Movies />
               </div>
             )}
@@ -116,7 +119,7 @@ function Navbar() {
               Genres
             </button>
             {genresDropdownVisible && (
-              <div className="border-solid border-2 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
+              <div className="border-solid border-2  z-50 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
                 <Genres />
               </div>
             )}

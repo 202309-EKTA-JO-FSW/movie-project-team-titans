@@ -26,7 +26,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="rounded-t-3xl mt-auto bg-[#142E2E] ">
+    <footer className="rounded-t-3xl mt-auto bg-[#142121] ">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="logo mb-0">
           <Link href={`/Home`}>

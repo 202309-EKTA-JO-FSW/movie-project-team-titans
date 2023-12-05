@@ -53,7 +53,8 @@ export default function MoviesPage() {
   return (
     <div>
       <div>
-        <h3>{category} Movies</h3>
+      <h3 className="text-3xl text-white font-bold mx-5 p-2 text-center bg-[#276060] rounded-full "> {category} Movies </h3>
+        
         <ul>
           {movies.map((movie) => (
             <li key={movie.id}>

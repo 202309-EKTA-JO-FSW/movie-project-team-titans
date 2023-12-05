@@ -1,9 +1,11 @@
 import React from "react"
 import Link from "next/link"
+
 function MoviesLink() {
   return (
     <div className="movies relative justify-center text-left mx-center">
-       <Link href={`/Movies`}>
+      <Link href={`/Movies`}>
+        {" "}
         <option
           className="  my-2  mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600"
           value="Top Rate"
@@ -13,6 +15,7 @@ function MoviesLink() {
       </Link>
 
       <Link href={`/Movies`}>
+        {" "}
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Popular"
@@ -21,6 +24,7 @@ function MoviesLink() {
         </option>
       </Link>
       <Link href={`/Movies`}>
+        {" "}
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Trending"

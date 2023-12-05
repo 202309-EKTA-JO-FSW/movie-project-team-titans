@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Movies from "./movies"
+import MoviesLink from "./movies"
 import ActorsLink from "./actors"
 import Search from "./search"
 import Genres from "./genres"
@@ -52,7 +52,7 @@ function Navbar() {
               </button>
               {moviesDropdownVisible && (
                 <div className="border-solid border-2 z-50 border-white absolute  bg-[#142121] text-white mt-6 rounded-xl">
-                  <Movies />
+                  <MoviesLink />
                 </div>
               )}
             </div>
@@ -106,7 +106,7 @@ function Navbar() {
             </button>
             {moviesDropdownVisible && (
               <div className="border-solid border-2 z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl">
-                <Movies />
+                <MoviesLink />
               </div>
             )}
           </div>

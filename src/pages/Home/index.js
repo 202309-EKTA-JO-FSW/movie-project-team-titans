@@ -129,7 +129,7 @@ return () => clearInterval(interval);
         <div className='lg:px-30 md:px-40 sm:px-30 xs:px-5 relative mb-10'>
           <div className="grid justify-items-center items-center lg:grid-cols-4 lg:gap-3 md:grid-cols-3 md:gap-2 sm:grid-cols-2 sm:gap-2 xs:grid-cols-1 xs:gap-2">
             {moviesTrending.map((movie) => (
-               <Link href={`/One-Movie`}><li
+               <Link href={``}><li
                 key={movie.id}
                 className="list-none relative"
                 onMouseEnter={() => setHoveredMovie(movie)}

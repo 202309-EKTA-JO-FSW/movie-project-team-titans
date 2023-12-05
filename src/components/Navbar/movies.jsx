@@ -1,9 +1,9 @@
 import React from "react"
 import Link from "next/link"
-function Movies() {
+function MoviesLink() {
   return (
     <div className="movies relative justify-center text-left mx-center">
-       <Link href="/One-Movie?category=Top Rated">
+       <Link href={`/Movies`}>
         <option
           className="  my-2  mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600"
           value="Top Rate"
@@ -12,7 +12,7 @@ function Movies() {
         </option>
       </Link>
 
-      <Link href="/One-Movie?category=Popular">
+      <Link href={`/Movies`}>
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Popular"
@@ -20,7 +20,7 @@ function Movies() {
           Popular
         </option>
       </Link>
-      <Link href="/One-Movie?category=Trending">
+      <Link href={`/Movies`}>
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Trending"
@@ -28,7 +28,7 @@ function Movies() {
           Trending
         </option>
       </Link>
-      <Link href="/One-Movie?category=Now Playing">
+      <Link href={`/Movies`}>
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Now Playing"
@@ -36,7 +36,7 @@ function Movies() {
           Now Playing
         </option>
       </Link>
-      <Link href="/One-Movie?category=Upcoming">
+      <Link href={`/Movies`}>
         <option
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Upcoming"
@@ -48,4 +48,4 @@ function Movies() {
   )
 }
 
-export default Movies
+export default MoviesLink

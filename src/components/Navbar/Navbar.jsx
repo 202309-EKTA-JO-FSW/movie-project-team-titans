@@ -51,7 +51,7 @@ function Navbar() {
                 Movies
               </button>
               {moviesDropdownVisible && (
-                <div className="border-solid border-2 z-50 border-white absolute  bg-gray-800 text-white mt-6 rounded-xl">
+                <div className="border-solid border-2 z-50 border-white absolute  bg-[#142121] text-white mt-6 rounded-xl">
                   <Movies />
                 </div>
               )}
@@ -66,7 +66,7 @@ function Navbar() {
                 Genres
               </button>
               {genresDropdownVisible && (
-                <div className="border-solid border-2  z-50 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
+                <div className="border-solid border-2  z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl">
                   <Genres />
                 </div>
               )}
@@ -105,7 +105,7 @@ function Navbar() {
               Movies
             </button>
             {moviesDropdownVisible && (
-              <div className="border-solid border-2 z-50 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
+              <div className="border-solid border-2 z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl">
                 <Movies />
               </div>
             )}
@@ -119,7 +119,7 @@ function Navbar() {
               Genres
             </button>
             {genresDropdownVisible && (
-              <div className="border-solid border-2  z-50 border-white absolute bg-gray-800 text-white mt-6 rounded-xl">
+              <div className="border-solid border-2  z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl">
                 <Genres />
               </div>
             )}

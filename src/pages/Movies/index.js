@@ -1,69 +1,86 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 
-export default function MoviesPage() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const category = new URLSearchParams(location.search).get('category');
+import React, { useState, useEffect } from "react";
 
-  const [movies, setMovies] = useState([]);
+import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/Navbar/Navbar";
+
+
+const MoviesPage = () => {
+  const [moviesByCategory, setMoviesByCategory] = useState({});
 
   useEffect(() => {
-    const fetchData = async (url) => {
-      const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer YOUR_API_KEY',
-        },
-      };
+    const fetchAllCategories = async () => {
+      const categories = ["Top Rated", "Popular", "Trending", "Now Playing", "Upcoming"];
+      const allMovies = {};
 
-      try {
-        const response = await fetch(url, options);
-        const data = await response.json();
-        setMovies(data.results);
-      } catch (error) {
-        console.error('Error fetching movies:', error);
+      for (const category of categories) {
+        const apiUrl = getApiUrl(category);
+
+        try {
+          const response = await fetch(apiUrl);
+          const data = await response.json();
+          allMovies[category] = data.results;
+        } catch (error) {
+          console.error(`Error fetching ${category} movies:`, error);
+        }
       }
+
+      setMoviesByCategory(allMovies);
     };
 
-    if (category) {
-      switch (category) {
-        case 'Now Playing':
-          fetchData('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1');
-          break;
-        case 'Popular':
-          fetchData('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');
-          break;
-        case 'Top Rate':
-          fetchData('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1');
-          break;
-        case 'Upcoming':
-          fetchData('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1');
-          break;
-        case 'Trending':
-          fetchData('https://api.themoviedb.org/3/trending/movie/day?language=en-US');
-          break;
-        default:
-          break;
-      }
+    fetchAllCategories();
+  }, []);
+  const getApiUrl = (category) => {
+    switch (category) {
+      case "Now Playing":
+        return "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+      case "Popular":
+        return "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+      case "Top Rated":
+        return "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+      case "Upcoming":
+        return "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+      case "Trending":
+        return "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
+      default:
+        return "";
     }
-  }, [category]);
-
+  };
   return (
     <div>
-      <div>
-      <h3 className="text-3xl text-white font-bold mx-5 p-2 text-center bg-[#276060] rounded-full "> {category} Movies </h3>
-        
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>
-              {movie.title} - Poster: {movie.poster_path}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Navbar />
+
+      <h2>Movies by Category:</h2>
+      {Object.entries(moviesByCategory).map(([category, movies]) => (
+        <div key={category}>
+          <h3>{category} Movies, {movies}</h3>
+          {movies ? (
+            <ul>
+              {movies.length > 0 && (
+                <li>
+                  <div>
+                    <h4>{movies[0].title}</h4>
+                    <p>Poster: {movies[0].poster_path}</p>
+                  </div>
+                </li>
+              )}
+              {movies.length > 1 && (
+                <li>
+                  <div>
+                    <h4>{movies[1].title}</h4>
+                    <p>Poster: {movies[1].poster_path}</p>
+                  </div>
+                </li>
+              )}
+            </ul>
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+      ))}
+      <Footer />
     </div>
   );
-}
+};
 
+export default MoviesPage;

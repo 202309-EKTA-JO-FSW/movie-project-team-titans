@@ -10,6 +10,12 @@ function Navbar() {
   const [genresDropdownVisible, setGenresDropdownVisible] = useState(false)
   const [windowWidth, setWindowWidth] = useState(0)
 
+  const [isListVisible, setListVisible] = useState(false)
+
+  const toggleList = () => {
+    setListVisible(!isListVisible)
+  }
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth)
@@ -46,7 +52,6 @@ function Navbar() {
               <button
                 className="text-white focus:outline-none bg-transparent  hover:opacity-75"
                 onClick={() => setMoviesDropdownVisible(!moviesDropdownVisible)}
-                onBlur={() => setMoviesDropdownVisible(false)}
               >
                 Movies
               </button>
@@ -61,7 +66,6 @@ function Navbar() {
               <button
                 className=" hover:opacity-75 text-white focus:outline-none"
                 onClick={() => setGenresDropdownVisible(!genresDropdownVisible)}
-                onBlur={() => setGenresDropdownVisible(false)}
               >
                 Genres
               </button>
@@ -98,9 +102,8 @@ function Navbar() {
 
           <div className="group inline-block relative">
             <button
-              className="transition hover:opacity-75 text-white focus:outline-none bg-transparent"
+              className=" text-white hover:opacity-75  bg-transparent"
               onClick={() => setMoviesDropdownVisible(!moviesDropdownVisible)}
-              onBlur={() => setMoviesDropdownVisible(false)}
             >
               Movies
             </button>
@@ -114,7 +117,6 @@ function Navbar() {
             <button
               className="text-white  hover:opacity-75 focus:outline-none"
               onClick={() => setGenresDropdownVisible(!genresDropdownVisible)}
-              onBlur={() => setGenresDropdownVisible(false)}
             >
               Genres
             </button>

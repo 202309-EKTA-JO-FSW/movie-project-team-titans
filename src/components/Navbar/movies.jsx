@@ -4,49 +4,46 @@ import Link from "next/link"
 function MoviesLink() {
   return (
     <div className="movies relative justify-center text-left mx-center">
-      <Link href={`/Movies`}>
+      {" "}
+      <div
+        className="  my-2  mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600"
+        value="Top Rate"
+      >
+        <Link href={`/Movies?category=Top Rated`}>Top Rated</Link>
+      </div>
+      <Link href={`/Movies?category=Popular`}>
         {" "}
-        <option
-          className="  my-2  mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600"
-          value="Top Rate"
-        >
-          Top Rated
-        </option>
-      </Link>
-
-      <Link href={`/Movies`}>
-        {" "}
-        <option
+        <div
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Popular"
         >
           Popular
-        </option>
+        </div>
       </Link>
-      <Link href={`/Movies`}>
+      <Link href={`/Movies?category=Trending`}>
         {" "}
-        <option
+        <div
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Trending"
         >
           Trending
-        </option>
+        </div>
       </Link>
-      <Link href={`/Movies`}>
-        <option
+      <Link href={`/Movies?category=Now Playing`}>
+        <div
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Now Playing"
         >
           Now Playing
-        </option>
+        </div>
       </Link>
-      <Link href={`/Movies`}>
-        <option
+      <Link href={`/Movies?category=Upcoming`}>
+        <div
           className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
           value="Upcoming"
         >
           Upcoming
-        </option>
+        </div>
       </Link>
     </div>
   )

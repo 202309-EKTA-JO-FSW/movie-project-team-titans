@@ -18,25 +18,20 @@ const Footer = () => {
       github: "https://github.com/MahmoudRumaneh",
       linkedin: "https://www.linkedin.com/in/mahmoud-rumaneh-b40537209/",
     },
-    {
-      name: "Ghassan Ajouri",
-      github: "https://github.com/GhassanAjouri",
-      linkedin: "https://www.linkedin.com/in/GhassanAjouri",
-    },
   ]
 
   return (
     <footer className="rounded-t-3xl mt-auto bg-[#142121] ">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="logo mb-0">
+        <div className="Logo mb-0">
           <Link href={`/Home`}>
-            <img src="/logo.png" alt="logo" className="absolute"></img>
+            <img src="/Logo.png" alt="Logo" className="w-64 absolute "></img>
           </Link>
         </div>
         <div className="lg:flex lg:items-start lg:gap-8 mt-12">
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <div className="col-span-2">
-              <p className="text-white mt-4 text-gray-500">
+              <p className=" mt-10 text-gray-500">
                 🎥 Dive into a world of cinematic wonders at our movie haven!
                 JORBest, your go-to destination for blockbuster thrills and
                 hidden gems. Explore, discover, and elevate your movie
@@ -45,7 +40,7 @@ const Footer = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className=" text-white font-medium text-gray-900">Company</p>
+              <p className=" text-white font-medium ">Company</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a

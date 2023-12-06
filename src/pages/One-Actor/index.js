@@ -44,20 +44,20 @@ const OneActorPage = () => {
     <div>
       <Navbar />
       <div className='m-20'>
-      <div className='bg-[#6c8080] rounded-3xl p-8'>
-        <div className='flex mx-auto max-w-5xl '>
+      <div className='bg-[#276060] rounded-3xl py-8 pl-1'>
+        <div className='flex ml-5 py-5 max-w-5xl '>
           <img
             src={`https://image.tmdb.org/t/p/w500${actorData.profile_path}`}
             alt={actorData.name}
             className="w-64 h-96 my-7 rounded-3xl object-cover"
           />
           <div className='flex flex-col ml-10'>
-            <p className='mb-7 font-bold text-5xl text-white'>{actorData.name}</p>
+            <p className='mb-7 mt-10 font-bold text-5xl text-white'>{actorData.name}</p>
               <p className='mb-4 text-white'>{actorData.biography}</p>
               <p className='mb-4 text-white'><b>Gender: </b>{actorData.gender== 1 ? "Female" : "Male"}</p>
             <p className='mb-4 text-white'><b>Birthday: </b>{actorData.birthday}</p>
             <p className='mb-4 text-white'><b>Place of Birth: </b>{actorData.place_of_birth}</p>
-            <p className='mb-4 text-white'><b>Popularity: </b>{actorData.popularity}</p>
+            <p className='mb-4 text-white'><b>Popularity: </b>{actorData.popularity.toFixed(0)}</p>
 
            
           </div>

@@ -7,6 +7,7 @@ import { StarIcon } from '@heroicons/react/solid';
 
 const MoviesPage = () => {
   const router = useRouter();
+  const { id } = router.query;
   const { category, genre } = router.query;
   const [movies, setMovies] = useState([]);
   const [moviesGenres, setMoviesGenres] = useState([]);
@@ -42,7 +43,7 @@ const MoviesPage = () => {
     };
 
     fetchData();
-  }, [category, genre]);
+  }, [category, genre, id]);
 
   useEffect(() => {
     const fetchMoviesGenres = async () => {
@@ -105,14 +106,14 @@ const MoviesPage = () => {
   return (
     <div>
       <Navbar />
-      <div className='mt-10 lg:px-5 md:px-5 sm:px-5 xs:px-5'>
+      <div className='mt-10 lg:px-50 md:px-40 sm:px-20 xs:px-5'>
         <h3 className="text-3xl text-white font-bold mx-5 p-2 text-center bg-[#276060] rounded-full">
           {category ? `${category} Movies` : 'Movies by Genre'}
         </h3>
-        <div className="grid  my-10 justify-items-center items-center lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-3 sm:grid-cols-2 sm:gap-1 xs:grid-cols-1 xs:gap-3">
+        <div className="grid my-10 justify-items-center items-center lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-3 sm:grid-cols-2 sm:gap-1 xs:grid-cols-1 xs:gap-3">
           {movies && movies.length > 0 ? (
             movies.map((movie) => (
-              <li key={movie.id} className="list-none rounded-md group relative ">
+                <Link href={{ pathname: '/One-Movie', query: { id: movie.id } }} ><li key={movie.id} className="list-none rounded-md group relative mb-5">
                 <div className="absolute top-0 left-0 bg-yellow-500 p-2 rounded-tl-3xl  rounded-br-md flex items-center">
                   <StarIcon className="w-6 h-6 text-white" />
                   <span className="text-white ml-2 font-bold">{movie.vote_average.toFixed(1)}</span>
@@ -123,17 +124,14 @@ const MoviesPage = () => {
                   className="w-full h-80 object-cover rounded-3xl"
                 />
                 <div className="absolute top-0 left-0 w-full h-0 flex flex-col font-bold text-center justify-center items-center bg-[#142e2edb] rounded-3xl opacity-0 group-hover:h-full group-hover:opacity-100 duration-500 pt-10 pr-5 pl-5">
-                  <p className=" text-center text-2xl text-white self-start mb-8">{movie.title}</p>
+                  <p className=" text-center text-2xl text-white mb-8">{movie.title}</p>
                   <p>Language: {movie.original_language === 'en' ? 'English' : movie.original_language === 'hi' ? 'Hindi' :
                     movie.original_language === 'ja' ? 'Japanese' : movie.original_language === 'ar' ? 'Arabic' :
                       movie.original_language === 'mn' ? 'Mongolian' : movie.original_language === 'ko' ? 'Korean' :
                         movie.original_language === 'it' ? 'Italian' : movie.original_language === 'fr' ? 'French' :
                           movie.original_language === 'zh' ? 'Zhuang' : ''}</p>
-                  <Link href={``}>
-                    {/* <button className="mt-5 px-8 py-3 rounded-full bg-[#276060] hover:bg-[#1f4d4d] font-bold duration-300" href="#">About Actor</button> */}
-                  </Link>
                 </div>
-              </li>
+              </li></Link>
             ))
           ) : (
             <li>No movies available</li>

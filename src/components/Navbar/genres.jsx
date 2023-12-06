@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
-export default function Genres() {
+function GenresLink() {
   const [moviesGenres, setMoviesGenres] = useState([]);
 
   useEffect(() => {
@@ -31,24 +32,17 @@ export default function Genres() {
     fetchMoviesGenres();
   }, []);
 
-  const getGenreNames = (genreIds) => {
-    return genreIds.map((genreId) => {
-      const genre = moviesGenres.find((g) => g.id === genreId);
-      return genre ? genre.name : "Unknown Genre";
-    });
-  };
-
   return (
-    <div className="max-h-48 overflow-y-auto">
+    <div className="genres-container max-h-48 overflow-y-auto">
       {moviesGenres.map((genre) => (
-        <option
-          key={genre.id}
-          className="my-2  mx-1 rounded-2xl px-5  hover:bg-gray-600"
-          value={genre.name}
-        >
-          {genre.name}
-        </option>
+        <Link href={`/Movies?genre=${genre.id}`} key={genre.id}>
+          <div className="my-2 mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600">
+            {genre.name}
+          </div>
+        </Link>
       ))}
     </div>
   );
 }
+
+export default GenresLink;

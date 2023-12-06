@@ -104,7 +104,7 @@ function Search() {
       {combinedResults.length > 0 && (
         <div
           ref={listRef}
-          className="xs:w-28 sm:w-32 sm:text-xs md:w-64 md:text-base lg:w-96 lg:text-lg absolute border-solid border-2 border-white rounded-3xl mt-1 bg-gray-900 shadow-md overflow-y-auto max-h-96"
+          className="xs:w-28 sm:w-32 sm:text-xs md:w-64 md:text-base lg:w-96 lg:text-lg absolute border-solid border-2 border-white rounded-3xl mt-1 bg-[#142E2E] shadow-md overflow-y-auto max-h-96"
 
         >
           {combinedResults.map((result) => (

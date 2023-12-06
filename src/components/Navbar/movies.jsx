@@ -1,51 +1,36 @@
-import React from "react"
-import Link from "next/link"
+import React from "react";
+import Link from "next/link";
+
 function MoviesLink() {
   return (
     <div className="movies relative justify-center text-left mx-center">
-       <Link href={`/Movies`}>
-        <option
-          className="  my-2  mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600"
-          value="Top Rate"
-        >
+      <Link href={`/Movies?category=Top Rated`}>
+        <div className="my-2 mx-1 rounded-2xl px-5 active:bg-gray-600  hover:bg-gray-600">
           Top Rated
-        </option>
+        </div>
       </Link>
-
-      <Link href={`/Movies`}>
-        <option
-          className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
-          value="Popular"
-        >
+      <Link href={`/Movies?category=Popular`}>
+        <div className="my-2 mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600">
           Popular
-        </option>
+        </div>
       </Link>
-      <Link href={`/Movies`}>
-        <option
-          className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
-          value="Trending"
-        >
+      <Link href={`/Movies?category=Trending`}>
+        <div className="my-2 mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600">
           Trending
-        </option>
+        </div>
       </Link>
-      <Link href={`/Movies`}>
-        <option
-          className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
-          value="Now Playing"
-        >
+      <Link href={`/Movies?category=Now Playing`}>
+        <div className="my-2 mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600">
           Now Playing
-        </option>
+        </div>
       </Link>
-      <Link href={`/Movies`}>
-        <option
-          className="my-2  mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600"
-          value="Upcoming"
-        >
+      <Link href={`/Movies?category=Upcoming`}>
+        <div className="my-2 mx-1 rounded-2xl px-5 active:bg-gray-600 hover:bg-gray-600">
           Upcoming
-        </option>
+        </div>
       </Link>
     </div>
-  )
+  );
 }
 
-export default MoviesLink
+export default MoviesLink;

@@ -110,6 +110,7 @@ const MoviesPage = () => {
         <h3 className="text-3xl text-white font-bold mx-5 p-2 text-center bg-[#276060] rounded-full">
           {category ? `${category} Movies` : 'Movies by Genre'}
         </h3>
+     
         <div className="grid my-10 justify-items-center items-center lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-3 sm:grid-cols-2 sm:gap-1 xs:grid-cols-1 xs:gap-3">
           {movies && movies.length > 0 ? (
             movies.map((movie) => (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import MoviesLink from "./movies"
 import ActorsLink from "./actors"
 import Search from "./search"
@@ -10,10 +10,22 @@ function Navbar() {
   const [genresDropdownVisible, setGenresDropdownVisible] = useState(false)
   const [windowWidth, setWindowWidth] = useState(0)
 
-  const [isListVisible, setListVisible] = useState(false)
+  const moviesListRef = useRef(null)
+  const genresListRef = useRef(null)
 
-  const toggleList = () => {
-    setListVisible(!isListVisible)
+  const handleClickOutside = (event) => {
+    if (
+      moviesListRef.current &&
+      !moviesListRef.current.contains(event.target)
+    ) {
+      setMoviesDropdownVisible(false)
+    }
+    if (
+      genresListRef.current &&
+      !genresListRef.current.contains(event.target)
+    ) {
+      setGenresDropdownVisible(false)
+    }
   }
 
   useEffect(() => {
@@ -32,6 +44,14 @@ function Navbar() {
     }
   }, [])
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside)
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
+
   return (
     <div className="bg-[#142E2E]">
       {windowWidth <= 480 ? (
@@ -39,7 +59,11 @@ function Navbar() {
           <div className="grid grid-cols-[max-content_1fr] justify-center items-center pt-4 pl-4 pr-4 text-white">
             <Link href={`/Home`}>
               {" "}
-              <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
+              <img
+                src="/Logo.png"
+                className="Logo  w-36 h-15 mr-2"
+                alt="Logo"
+              />
             </Link>
 
             <div className="mx-auto z-50">
@@ -70,7 +94,10 @@ function Navbar() {
                 Genres
               </button>
               {genresDropdownVisible && (
-                <div className="border-solid border-2  z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl">
+                <div
+                  className="border-solid border-2  z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl"
+                  ref={genresListRef}
+                >
                   <Genres />
                 </div>
               )}
@@ -81,28 +108,18 @@ function Navbar() {
           </div>
         </div>
       ) : (
-        // Larger screen content goes here
-        // ...
-        // ...
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        <div className="flex items-center  justify-around p-4 text-white">
+        <div className="flex items-center justify-around p-4 text-white">
           <div>
             <Link href={`/Home`}>
-              <img src="/logo.png" className="logo  w-15 h-8" alt="logo" />
+              <img src="/Logo.png" className="Logo w-48 h-15" alt="Logo" />
             </Link>
           </div>
 
           <Search />
 
-          <div className="group inline-block relative">
+          <div className="group inline-block relative" ref={moviesListRef}>
             <button
-              className=" text-white hover:opacity-75  bg-transparent"
+              className="text-white hover:opacity-75 bg-transparent"
               onClick={() => setMoviesDropdownVisible(!moviesDropdownVisible)}
             >
               Movies
@@ -113,20 +130,20 @@ function Navbar() {
               </div>
             )}
           </div>
-          <div className="group inline-block relative">
+          <div className="group inline-block relative" ref={genresListRef}>
             <button
-              className="text-white  hover:opacity-75 focus:outline-none"
+              className="text-white hover:opacity-75 focus:outline-none"
               onClick={() => setGenresDropdownVisible(!genresDropdownVisible)}
             >
               Genres
             </button>
             {genresDropdownVisible && (
-              <div className="border-solid border-2  z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl">
+              <div className="border-solid border-2 z-50 border-white absolute bg-[#142121] text-white mt-6 rounded-xl">
                 <Genres />
               </div>
             )}
           </div>
-          <div className=" hover:opacity-75">
+          <div className="hover:opacity-75">
             <ActorsLink />
           </div>
         </div>

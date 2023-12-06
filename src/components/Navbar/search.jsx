@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import { FaSearch } from "react-icons/fa"
+import Link from "next/link"
 
 function Search() {
   const [searchText, setSearchText] = useState("")
@@ -113,26 +114,36 @@ function Search() {
               className=" m-3 rounded-2xl p-3.5 active:bg-gray-600 hover:bg-gray-600 text-white flex items-center space-x-4 "
             >
               {result.type === "movie" ? (
-                <div className="flex-shrink-0">
+                <Link href={{ pathname: '/One-Movie', query: { id: result.id } }} ><div className="flex-shrink-0">
                   <img
                     src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
                     alt={result.title}
-                    className="w-14 h-20"
+                    className="w-14 h-20 rounded-xl"
                   />
-                </div>
+                </div></Link>
               ) : result.type === "actor" ? (
-                <div className="flex-shrink-0">
+                <Link href={{ pathname: '/One-Actor', query: { id: result.id } }} >
+                    <div className="flex-shrink-0">
                   <img
                     src={`https://image.tmdb.org/t/p/w500${result.profile_path}`}
                     alt={result.name}
-                    className="w-14 h-20"
+                    className="w-14 h-20 rounded-xl"
                   />
-                </div>
+                </div></Link>
               ) : null}
               <div>
-                <p className="font-bold">
-                  {result.type === "movie" ? result.title : result.name}
-                </p>
+              <p className="font-bold">
+  {result.type === "movie" ? (
+    <Link href={{ pathname: '/One-Movie', query: { id: result.id } }}>
+      <p>{result.title}</p>
+    </Link>
+  ) : (
+    <Link href={{ pathname: '/One-Actor', query: { id: result.id } }}>
+      <p>{result.name}</p>
+    </Link>
+  )}
+</p>
+
               </div>
             </div>
           ))}

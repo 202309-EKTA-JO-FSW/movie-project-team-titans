@@ -17,7 +17,8 @@
 
 ## Project Name: JORBest
 
-## Description of the project: 🎥 Dive into a world of cinematic wonders at our movie haven!
+## Description of the project: 
+🎥 Dive into a world of cinematic wonders at our movie haven!
 JORBest, your go-to destination for blockbuster thrills and
 hidden gems. Explore, discover, and elevate your movie
 experience with us – where every frame tells a story. 🍿✨

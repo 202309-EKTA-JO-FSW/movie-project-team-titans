@@ -12,11 +12,24 @@ Screenshots:
    ![oneActorPage](https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans/assets/80622950/b811a223-6c6c-4038-954a-771ecf972386)
 5. Search Bar:
    ![search bar](https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans/assets/80622950/ca45a5ac-1e40-4977-8f83-eb5737ea6adf)
-6. Resoponsive:
-   
+6. Resoponsive example:
+  . 
   ![responsive](https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans/assets/80622950/cbc2aa1b-0287-4d73-96f7-49d9dcb12647)
 
 Project Name: JORBest
+
+Description of the project: 🎥 Dive into a world of cinematic wonders at our movie haven!
+JORBest, your go-to destination for blockbuster thrills and
+hidden gems. Explore, discover, and elevate your movie
+experience with us – where every frame tells a story.
+
+Tools Used: 
+1. Visual Studio
+2. Logo designer: https://www.designevo.com/
+3. Backgrounds: https://wall.alphacoders.com/big.php?i=440481              https://unsplash.com/s/photos/(dark)-basic-background
+4. Canvas
+5. Youtube
+6. Documentations
 
 Team Names:
 1. Lunar Salameh

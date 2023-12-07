@@ -82,13 +82,9 @@ const Footer = () => {
                         key={index}
                         className="col-span-2 flex justify-start gap-3 "
                       >
-                        <a
-                          href="#"
-                          target="_blank"
-                          className="container w-40 text-white transition hover:opacity-75"
-                        >
+                        <p className="container w-40 text-white transition hover:opacity-75">
                           {member.name}
-                        </a>
+                        </p>
 
                         <li className="">
                           <a

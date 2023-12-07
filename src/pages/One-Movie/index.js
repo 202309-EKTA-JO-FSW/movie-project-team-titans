@@ -256,7 +256,7 @@ export default function OneMoviePage() {
               />
             </div>
 
-            <p className="ml-20 mr-20 mt-10">Actors:
+            <div className="ml-20 mr-20 mt-10">Actors:
               <div className="grid my-5 justify-items-center items-center lg:grid-cols-5 lg:gap-0 md:grid-cols-3 md:gap-3 sm:grid-cols-2 sm:gap-1 xs:grid-cols-1 xs:gap-3">
                 {actors.map(actor => (
                   <Link href={{ pathname: '/One-Actor', query: { id: actor.id } }} key={actor.id} className="list-none rounded-md group relative my-4">
@@ -275,11 +275,11 @@ export default function OneMoviePage() {
                   </Link>
                 ))}
               </div>
-            </p>
+            </div>
 
             <div className='mt-8 border-t border-gray-100 pt-8 ml-20 mr-20'></div>
             <div className='ml-20 mb-10 text-2xl'><h1>Production Companies</h1></div>
-            <p className="text-center">
+            <div className="text-center">
               <ul className="flex tex-center justify-center mt-5 bg-[#276060] lg:mx-40 rounded-3xl">
                 {oneMovie.production_companies && oneMovie.production_companies.length > 0 ? (
                   oneMovie.production_companies.map(company => (
@@ -294,7 +294,7 @@ export default function OneMoviePage() {
                     <li>No production companies available</li>
                     )}
                 </ul>
-                </p>
+                </div>
             </li>
         </div>
       </div>

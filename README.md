@@ -12,7 +12,8 @@ Screenshots:
    ![oneActorPage](https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans/assets/80622950/b811a223-6c6c-4038-954a-771ecf972386)
 5. Search Bar:
    ![search bar](https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans/assets/80622950/ca45a5ac-1e40-4977-8f83-eb5737ea6adf)
-6. Resoponsive: 
+6. Resoponsive:
+   
   ![responsive](https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans/assets/80622950/cbc2aa1b-0287-4d73-96f7-49d9dcb12647)
 
 Project Name: JORBest

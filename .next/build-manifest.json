@@ -12,20 +12,10 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/Actors": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Actors.js"
-    ],
-    "/Home": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Home.js"
-    ],
-    "/One-Actor": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/One-Actor.js"
+      "static/chunks/pages/index.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

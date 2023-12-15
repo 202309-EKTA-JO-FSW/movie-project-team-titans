@@ -10,6 +10,7 @@ const OneActorPage = () => {
   const [actorData, setActorData] = useState(null);
 
   useEffect(() => {
+    
     const fetchActorDetails = async () => {
       if (!id) {
         return; // Exit early if no ID is available

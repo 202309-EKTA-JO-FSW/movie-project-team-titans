@@ -168,6 +168,16 @@ const Footer = () => {
             <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
               <li>
                 <a
+                  href="https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans"
+                  target="_blank"
+                  className="text-gray-500 transition hover:opacity-75"
+                >
+                  Full Project Link
+                </a>
+              </li>
+
+              <li>
+                <a
                   href="#"
                   className="text-gray-500 transition hover:opacity-75"
                 >

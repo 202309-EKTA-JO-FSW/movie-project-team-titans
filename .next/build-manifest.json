@@ -17,6 +17,21 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
+    "/Home": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Home.js"
+    ],
+    "/One-Actor": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/One-Actor.js"
+    ],
+    "/One-Movie": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/One-Movie.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

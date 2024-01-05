@@ -1,4 +1,7 @@
 # JORBest Website
+
+*P.S: Check the Deployment link here (https://movie-project-two-kappa.vercel.app/) and the latest code in this GitHub Repo (https://github.com/LunarSalameh/Movie-Project) until the issue here is fixed.*
+
 ## Screenshots:
 ### 1. Home Page:
 ![homePage](https://github.com/202309-EKTA-JO-FSW/movie-project-team-titans/assets/80622950/58b35e15-9695-46a2-a980-29b5014b208d)
